@@ -1,13 +1,9 @@
 const router = require("express").Router();
-const User = require("../models/User")
+const User = require("../models/User");
 
 const questions = {
   hobbies: "What are your hobbies?",
-  routine: "Describe your daily routine.",
-  travel: "Tell me about a trip you enjoyed.",
-  food: "What is your favorite food?",
-  family: "Tell me about your family.",
-  work: "What do you do for work?"
+  travel: "Tell me about a trip you enjoyed."
 };
 
 router.get("/question/:topic", (req, res) => {
@@ -27,14 +23,8 @@ router.post("/analyze", async (req, res) => {
   res.json({
     success: true,
     feedback: {
-      pronunciation_score: 80,
-      grammar_score: 75,
-      fluency_score: 78,
-      vocabulary_score: 82,
-      positive_points: ["Clear answer"],
-      mistakes: ["Minor grammar issue"],
-      suggestions: ["Speak slower"],
-      uzbek_explanation: "Javob yaxshi, lekin grammatikani biroz to‘g‘rilang."
+      grammar_score: 80,
+      uzbek_explanation: "Yaxshi javob, grammatikani biroz yaxshilang"
     }
   });
 });
